@@ -5,7 +5,7 @@
 
 // I: height (integer array)
 // O: maximum amount of water a container can store
-// C: none
+// C: O(n)
 // E: none
 
 var maxArea = function(height) {
