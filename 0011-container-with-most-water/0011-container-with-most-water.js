@@ -11,7 +11,7 @@
 // set up left and right pointers, and maxArea variable
 // loop with two pointers
     // compare area with max and update
-    // bring the pointer with lower height closer
+    // bring the pointer with lower height closer to middle
 
 var maxArea = function(height) {
     var max = 0;
