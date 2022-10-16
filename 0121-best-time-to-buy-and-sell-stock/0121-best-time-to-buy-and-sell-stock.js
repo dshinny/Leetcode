@@ -8,26 +8,27 @@
 // C: cannot sell before buy
 // E: no profit -> 0
 
-// local min, local max, global max
-// loop through prices
-    // if current is lower than local min, local min and max are current
-    // if current is greater than local max, update local max
-    // if profit (max - min) is greater than global max, update
+// initialize two pointers, global max
+// loop through while right pointer is less than length
+    // if right value is less than left value
+        // update left to right
+        // update right to left + 1
+    // compare profit (right - left) to global max
+    // right++
 
 var maxProfit = function(prices) {
-    var min = prices[0]
-    var max = prices[0]
     var globalMax = 0;
-    for (var i = 0; i < prices.length; i++) {
-        if (prices[i] < min) {
-            min = prices[i];
-            max = prices[i];
+    var left = 0;
+    var right = 1;
+    while (right < prices.length) {
+        var profit = prices[right] - prices[left];
+        globalMax = Math.max(profit, globalMax)
+        if (prices[right] < prices[left]) {
+            left = right;
+            right = left + 1;
+        } else {
+            right++;
         }
-        if (prices[i] > max) {
-            max = prices[i];
-        }
-        var profit = max - min;
-        globalMax = Math.max(profit, globalMax);
     }
     return globalMax;
 };
