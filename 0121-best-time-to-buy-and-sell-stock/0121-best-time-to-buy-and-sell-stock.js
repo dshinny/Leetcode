@@ -10,10 +10,10 @@
 
 // initialize two pointers, global max
 // loop through while right pointer is less than length
+    // compare profit (right - left) to global max
     // if right value is less than left value
         // update left to right
         // update right to left + 1
-    // compare profit (right - left) to global max
     // right++
 
 var maxProfit = function(prices) {
