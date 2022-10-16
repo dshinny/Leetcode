@@ -13,6 +13,7 @@
     // if current is lower than local min, local min and max are current
     // if current is greater than local max, update local max
     // if profit (max - min) is greater than global max, update
+
 var maxProfit = function(prices) {
     var min = prices[0]
     var max = prices[0]
