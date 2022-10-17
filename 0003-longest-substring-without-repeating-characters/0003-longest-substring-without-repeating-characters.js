@@ -13,8 +13,8 @@
 // loop through s
     // if the value is seen past left pointer
         // update left to be prev seen index + 1
-        // update seen index to current index
-    // else add value to seen and increment right
+    // update seen index to current index
+    // increment right
 
 var lengthOfLongestSubstring = function(s) {
     if (s.length <= 1) {
