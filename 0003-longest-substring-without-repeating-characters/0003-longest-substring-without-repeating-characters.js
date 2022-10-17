@@ -14,6 +14,7 @@
     // if the value is seen past left pointer
         // update left to be prev seen index + 1
     // update seen index to current index
+    // compare length to max
     // increment right
 
 var lengthOfLongestSubstring = function(s) {
