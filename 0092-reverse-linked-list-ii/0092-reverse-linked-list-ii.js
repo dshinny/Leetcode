@@ -18,20 +18,17 @@
 // E: reversing the entire list
 
 // intiailize prev, curr, next, position = 1
-// initialize before, after, first, last
-// loop through
+// initialize before, after, subHead, last
+// loop through until right
     // if position is left
         // before = prev
-        // first = curr
-    // if position is greater than left and less than or equal to right
+        // subHead = curr
+    // if position is greater than left
         // reverse
-    // if position is right
-        // after = next
-        // last = curr
     // update variables
     // increment position
-// before.next = first
-// last.next = after
+// connect sublist with list
+
 
 var reverseBetween = function(head, left, right) {
     var prev = null;
