@@ -17,15 +17,15 @@
 // loop over list
     // if child, 
         // traverseChild(curr, next)
+    // increment
 
 // traverseChild (curr, next):
 // initialize subHead = curr.child
+// initialize subTail
 // initialize pointer = subHead
-// loop through starting from subHead
-    // if child,
-        // traverse(curr, next)
+// loop through starting from subHead to find tail
 // link subHead to curr
-// link 
+// link subTail to next
 
 var flatten = function(head) {
     var curr = head;
