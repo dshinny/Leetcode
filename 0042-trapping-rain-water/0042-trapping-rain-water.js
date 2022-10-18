@@ -23,7 +23,7 @@
             // update total
         // else update maxLeft
         // increment left
-    // else do the same thing with right
+    // else repeat with right
 
 var trap = function(height) {
     var area = 0;
