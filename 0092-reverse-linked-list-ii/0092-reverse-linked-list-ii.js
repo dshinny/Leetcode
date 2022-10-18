@@ -28,6 +28,7 @@
     // update variables
     // increment position
 // connect sublist with list
+// edge case for left === 1
 
 
 var reverseBetween = function(head, left, right) {
