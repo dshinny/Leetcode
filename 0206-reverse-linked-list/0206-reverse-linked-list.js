@@ -17,24 +17,18 @@
 
 // initialize prev, curr, next variables
 // loop through list while curr.next
-    // next is curr.next
-    // if theres no next, update head
-    // curr.next is prev
+    // reorder
     // update variables
 
 var reverseList = function(head) {
     var prev = null;
     var curr = head;
     var next;
-    var newHead = head;
     while (curr) {
         next = curr.next;
-        if (!curr.next) {
-            newHead = curr;
-        }
         curr.next = prev;
         prev = curr;
         curr = next;
     }
-    return newHead;
+    return prev;
 };
