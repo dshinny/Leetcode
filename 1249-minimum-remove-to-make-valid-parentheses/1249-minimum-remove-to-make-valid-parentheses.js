@@ -17,6 +17,7 @@
         // else remove
 // while stack.length
     // remove at those indices
+// return string form
 
 var minRemoveToMakeValid = function(s) {
     var stack = [];
