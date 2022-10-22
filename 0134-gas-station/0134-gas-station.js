@@ -16,11 +16,9 @@ var canCompleteCircuit = function(gas, cost) {
         curr += diffArr[i];
         if (curr < 0) {
             start = i + 1;
-            curr = 0
+            curr = 0;
         }
     }
-    if (tank >= 0) {
-        return start;
-    }
-    return -1;
+    if (tank < 0) return -1;
+    return start;
 };
