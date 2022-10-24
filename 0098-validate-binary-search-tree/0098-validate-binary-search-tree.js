@@ -11,22 +11,12 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-    var inOrder = [];
-    var traverse = function(node) {
-        if (node.left) traverse(node.left)
-        inOrder.push(node.val);
-        if (node.right) traverse(node.right)
+    var result = true;
+    function traverse(node, left, right) {
+        if (node.val <= left || node.val >= right) result = false;
+        if (node.left) traverse(node.left, left, node.val);
+        if (node.right) traverse(node.right, node.val, right);
     }
-    traverse(root);
-    if (isOrdered(inOrder)) {
-        return true;
-    }
-    return false;
+    traverse(root, -Infinity, Infinity);
+    return result;
 };
-
-var isOrdered = function(arr) {
-    for (var i = 1; i < arr.length; i++) {
-        if (arr[i] <= arr[i - 1]) return false;
-    }
-    return true;
-}
