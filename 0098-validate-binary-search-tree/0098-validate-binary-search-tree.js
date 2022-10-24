@@ -13,7 +13,10 @@
 var isValidBST = function(root) {
     var result = true;
     function traverse(node, left, right) {
-        if (node.val <= left || node.val >= right) result = false;
+        if (node.val <= left || node.val >= right) {
+            result = false;
+            return;
+        }
         if (node.left) traverse(node.left, left, node.val);
         if (node.right) traverse(node.right, node.val, right);
     }
