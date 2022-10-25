@@ -7,6 +7,7 @@
 // sequential iteration through every element
     // if 1, increment counter and use bfs to turn every adjacent 1's to 0's
 var numIslands = function(grid) {
+    if (grid.length === 0) return 0;
     var counter = 0;
     for (var i = 0; i < grid.length; i++) {
         for (var j = 0; j < grid[i].length; j++) {
