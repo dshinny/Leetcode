@@ -8,7 +8,6 @@
 
 // make adjacencyList
 // start from headId and dfs
-    // 
 var numOfMinutes = function(n, headID, manager, informTime) {
     var list = manager.map(() => []);
     for (var i = 0; i < n; i++) {
