@@ -10,11 +10,14 @@ var minCostClimbingStairs = function(cost) {
     var n = cost.length;
     if (n === 0) return cost[0];
     if (n === 1) return cost[1];
-    var dp = [cost[0], cost[1]];
+    var prev = cost[0];
+    var curr = cost[1];
     for (var i = 2; i < n; i++) {
-        dp[i] = cost[i] + Math.min(dp[i - 1], dp[i - 2]);
+        var temp = cost[i] + Math.min(prev, curr);
+        prev = curr;
+        curr = temp;
     }
-    return Math.min(dp[n - 1], dp[n - 2]);
+    return Math.min(prev, curr);
 }
 
 // Top-Down
