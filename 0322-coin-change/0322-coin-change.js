@@ -4,7 +4,7 @@
  * @return {number}
  */
 var coinChange = function(coins, amount) {
-    var dp = new Array(amount + 1).fill(amount + 1);
+    var dp = Array((amount + 1)).fill((amount + 1));
     dp[0] = 0;
     for (var i = 1; i < amount + 1; i++) {
         for (var j = 0; j < coins.length; j++) {
