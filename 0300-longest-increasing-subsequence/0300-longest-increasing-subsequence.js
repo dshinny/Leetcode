@@ -10,12 +10,8 @@ var lengthOfLIS = function(nums) {
         for (var i = index; i < nums.length; i++) {
             var curr = nums[i];
             if (curr > start) {
-                if (dp[i] !== -Infinity) {
-                    dp[index] = Math.max(dp[index], len + dp[i]);
-                    result = Math.max(dp[index], result);
-                } else {
-                    dfs(i, len + 1)
-                }
+                dp[index] = Math.max(dp[index], len + dp[i]);
+                result = Math.max(dp[index], result);
             }
         }
         dp[index] = Math.max(dp[index], len)
