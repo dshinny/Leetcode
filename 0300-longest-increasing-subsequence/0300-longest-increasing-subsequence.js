@@ -4,7 +4,7 @@
  */
 var lengthOfLIS = function(nums) {
     var result = -Infinity;
-    var dp = new Array(nums.length).fill(-Infinity);
+    var dp = new Array(nums.length).fill(1);
     var dfs = function(index, len) {
         var start = nums[index]
         for (var i = index; i < nums.length; i++) {
