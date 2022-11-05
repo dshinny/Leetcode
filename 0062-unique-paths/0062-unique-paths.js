@@ -3,11 +3,6 @@
  * @param {number} n
  * @return {number}
  */
-
-const directions = [
-    [1, 0],
-    [0, 1]
-]
 var uniquePaths = function(m, n) {
     var row = 0;
     var col = 0;
