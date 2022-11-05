@@ -1,0 +1,22 @@
+/**
+ * @param {number} m
+ * @param {number} n
+ * @return {number}
+ */
+
+const directions = [
+    [1, 0],
+    [0, 1]
+]
+var uniquePaths = function(m, n) {
+    var row = 0;
+    var col = 0;
+    var counter = 0;
+    var dp = new Array(m).fill(0).map(() => new Array(n).fill(1));
+    for (var i = m - 2; i >= 0; i--) {
+        for (var j = n - 2; j >= 0; j--) {
+            dp[i][j] = dp[i][j + 1] + dp[i + 1][j]
+        }
+    }
+    return dp[0][0]
+};
