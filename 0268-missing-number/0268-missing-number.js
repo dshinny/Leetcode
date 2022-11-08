@@ -5,7 +5,7 @@
 var missingNumber = function(nums) {
     var i = 0;
     while (i < nums.length) {
-        if (nums[i] !== nums.length && nums[i] !== nums[j]) {
+        if (nums[i] !== nums.length && nums[i] !== i) {
             var j = nums[i];
             var temp = nums[i];
             nums[i] = nums[j];
