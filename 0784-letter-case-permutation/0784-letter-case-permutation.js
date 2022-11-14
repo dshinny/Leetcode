@@ -6,7 +6,7 @@ var letterCasePermutation = function(s) {
     var result = [''];
     for (var i = 0; i < s.length; i++) {
         const length = result.length;
-        if (!isNaN(parseInt(s[i], 10))) {
+        if (!isNaN(parseInt(s[i]))) {
             for (var j = 0; j < length; j++) {
                 result[j] += s[i];
             }
