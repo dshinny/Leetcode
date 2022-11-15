@@ -4,36 +4,33 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
-    if (nums.length < 0) return [-1, -1];
-    var mid = binarySearch(nums, 0, nums.length - 1, target);
-    if (mid === -1) return [-1, -1];
-    var start = mid;
-    var end = mid;
-    var temp1;
-    var temp2;
-    while (start !== -1) {
-        temp1 = start;
-        start = binarySearch(nums, 0, start - 1, target);
+    var result = [-1, -1];
+    result[0] = binarySearch(nums, target, true);
+    if (result[0] !== -1) {
+        result[1] = binarySearch(nums, target, false);
     }
-    start = temp1;
-    while (end !== -1) {
-        temp2 = end;
-        end = binarySearch(nums, end + 1, nums.length - 1, target);
-    }
-    end = temp2;
-    return [start, end]
+    return result;
 };
 
-var binarySearch = function(nums, left, right, target) {
-    while (left <= right) {
-        var mid = Math.floor((left + right) / 2);
+var binarySearch = function(nums, target, findStart) {
+    var index = -1;
+    var start = 0;
+    var end = nums.length - 1;
+    var mid;
+    while (start <= end) {
+        mid = Math.floor((start + end) / 2);
         if (nums[mid] === target) {
-            return mid;
-        } else if (target < nums[mid]) {
-            right = mid - 1;
+            index = mid;
+            if (findStart) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        } else if (nums[mid] > target) {
+            end = mid - 1;
         } else {
-            left = mid + 1;
+            start = mid + 1;
         }
     }
-    return -1;
+    return index;
 }
