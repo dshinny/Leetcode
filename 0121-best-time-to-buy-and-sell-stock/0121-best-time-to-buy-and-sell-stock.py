@@ -5,7 +5,8 @@ class Solution:
         right = 1
         while right < len(prices):
             profit = prices[right] - prices[left]
-            globalMax = max(globalMax, profit)
+            if profit > globalMax:
+                globalMax = profit
             if prices[right] < prices[left]:
                 left = right
                 right = left + 1
