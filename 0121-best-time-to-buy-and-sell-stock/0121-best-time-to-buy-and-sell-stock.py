@@ -1,13 +1,14 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        localMin = float('inf')
-        localMax = float('-inf')
-        globalMax = 0;
-        for i in range(len(prices)):
-            if prices[i] < localMin:
-                localMin = prices[i]
-                localMax = prices[i]
+        globalMax = 0
+        left = 0
+        right = 1
+        while right < len(prices):
+            profit = prices[right] - prices[left]
+            globalMax = max(globalMax, profit)
+            if prices[right] < prices[left]:
+                left = right
+                right = left + 1
             else:
-                localMax = max(localMax, prices[i])
-            globalMax = max(globalMax, localMax - localMin)
+                right += 1
         return globalMax
