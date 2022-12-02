@@ -16,12 +16,8 @@ class Solution:
                 prev.next = n2
                 n2 = n2.next
             prev = prev.next
-        while n1:
+        if n1:
             prev.next = n1
-            n1 = n1.next
-            prev = prev.next
-        while n2:
+        if n2:
             prev.next = n2
-            n2 = n2.next
-            prev = prev.next
         return prehead.next
